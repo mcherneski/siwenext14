@@ -56,6 +56,8 @@ export const authOptions: NextAuthOptions = {
     async session({ session, token }: { session: any; token: any }) {
       session.address = token.sub;
       session.user.name = token.sub;
+      session.user.email = 'mgcherneski@gmail.com',
+      session.user.role = 'admin'
       return session;
     },
   },
